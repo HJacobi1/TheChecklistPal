@@ -22,6 +22,9 @@ function addItemToList(item) {
 
   listItem.appendChild(checkbox);
   listItem.appendChild(label);
+  listItem.addEventListener("click", (e) => {
+    if (e.target !== checkbox) checkbox.checked = !checkbox.checked;
+  });
 
   list.appendChild(listItem);
 }
