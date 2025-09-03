@@ -1,3 +1,8 @@
+html {
+scroll-behavior: smooth;
+width: 100% ;
+}
+
 body {
 font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
 margin: 0;
@@ -25,7 +30,8 @@ main {
 flex: 1; /* Ocupa o espaço restante entre header e footer */
 padding: 20px;
 box-sizing: border-box;
-overflow-y: auto;
+display: flex;
+flex-direction: column;
 }
 
 main input[type="text"] {
@@ -38,18 +44,43 @@ margin-right: 10px;
 }
 
 main button {
-margin-top: 10px;
-padding: 10px;
-background-color: rgb(39, 24, 14);
-color: white;
-border: none;
-cursor: pointer;
-font-size: 12px;
-border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgb(39, 24, 14);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 5px;
 }
 
 main button:hover {
-background-color: rgb(34, 21, 12);
+  background-color: rgb(34, 21, 12);
+}
+
+@media (max-width: 600px) {
+  main input[type="text"]{
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  main button {    
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  header,
+  footer {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
 
 main ul{
@@ -85,23 +116,6 @@ font-size: 12px;
 padding: 10px;
 background-color: rgb(39, 24, 14);
 color: white;
-position: fixed;
 bottom: 0;
 width: 100%;
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 600px) {
-  main input[type="text"], main button {
-    width: 100%;
-    margin: 5px 5px;
-    font-size: 16px;
-  }
-  main {
-    padding: 10px;
-  }
-  header, footer {
-    font-size: 14px;
-    padding: 8px;
-  }
 }
