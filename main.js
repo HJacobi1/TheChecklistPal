@@ -43,7 +43,7 @@ function renderItem(task) {
   label.htmlFor = checkbox.id;
 
   const button = document.createElement("button");
-  button.textContent = "Delete";
+  button.textContent = "Remove";
 
   listItem.appendChild(checkbox);
   listItem.appendChild(label);

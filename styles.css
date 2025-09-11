@@ -6,7 +6,7 @@ width: 100% ;
 body {
 font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
 margin: 0;
-background-color: rgb(56, 35, 20);
+background-color: rgb(37, 37, 37);
 color: white;
 min-height: 100vh; /* Adapta à altura da janela */
 display: flex;
@@ -15,9 +15,9 @@ flex-direction: column;
 
 header {
 text-align: left;
-font-size: 15px;
+font-size: 16px;
 font-weight: bold;
-background-color: rgb(39, 24, 14);
+background-color: rgb(116, 116, 116);
 width: 100%;
 padding: 1%;
 margin: 0;
@@ -32,37 +32,38 @@ padding: 20px;
 box-sizing: border-box;
 display: flex;
 flex-direction: column;
+font-size: 16px;
 }
 
 main input[type="text"] {
 padding: 10px;
-width: 70%;
+width: 86%;
 border: none;
 border-radius: 5px;
-font-size: 12px;
+font-size: 16px;
 margin-right: 10px;
 }
 
 main button {
-  margin-top: 10px;
+  width: 10%;
   padding: 10px;
-  background-color: rgb(39, 24, 14);
+  background-color: rgb(56, 56, 56);
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 12px;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 main button:hover {
-  background-color: rgb(34, 21, 12);
+  background-color: rgb(48, 48, 48);
+  transition: background-color 0.3s ease;
 }
 
 @media (max-width: 600px) {
   main input[type="text"]{
     width: 100%;
     margin: 5px 0px;
-    font-size: 16px;
     box-sizing: border-box;
   }
   main button {    
@@ -81,17 +82,28 @@ main button:hover {
     font-size: 14px;
     padding: 8px;
   }
+
+  main ul li label{    
+    font-size: 15px;    
+  }
+
+  main ul li button {
+    width: auto;
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+  
 }
 
 main ul{
 list-style-type: none;
 padding: 0;
-background-color: rgb(39, 24, 14);
+background-color: rgb(56, 56, 56);
 border-radius: 5px;
 }
 main ul li {    
 padding: 10px;
-border-bottom: 3px solid rgb(56, 35, 20);;
+border-bottom: 3px solid rgb(37, 37, 37);;
 }
 main ul li:last-child {
 border-bottom: none;
@@ -105,6 +117,7 @@ cursor: pointer;
 main ul li input[type="checkbox"]:checked + label {
   text-decoration: line-through;
   color: gray;
+  transition: all 0.3s ease;
 }
 main ul li label {
 vertical-align: middle;
@@ -119,16 +132,19 @@ border: none;
 cursor: pointer;
 padding: 5px 10px;
 border-radius: 5px;
-font-size: 12px;
 margin: 0;
+font-weight: bold ;
 } 
+main ul li button:hover {
+  background-color: rgb(126, 2, 2);
+}
 
 
 footer {
 text-align: left;
-font-size: 12px;
+font-size: 14px;
 padding: 10px;
-background-color: rgb(39, 24, 14);
+background-color: rgb(116, 116, 116);
 color: white;
 bottom: 0;
 width: 100%;
