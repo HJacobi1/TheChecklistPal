@@ -8,8 +8,13 @@ const list = document.getElementById("checklist");
 
 const input = document.getElementById("new-item-input");
 
-document.getElementById("add-item-button").addEventListener("click", () => {
-  task = { id: `item-${Date.now()}`, text: input.value, completed: false };
+document.getElementById("add-item-button").addEventListener("click", addItem);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") addItem();
+});
+
+function addItem(){
+  let task = { id: `item-${Date.now()}`, text: input.value, completed: false };
 
   tasks.push(task);
 
@@ -17,7 +22,7 @@ document.getElementById("add-item-button").addEventListener("click", () => {
 
   renderItem(task);
   input.value = "";
-});
+}
 
 function renderItem(task) {
   if (task.text.trim() === "") return;
@@ -37,13 +42,23 @@ function renderItem(task) {
   label.textContent = task.text;
   label.htmlFor = checkbox.id;
 
+  const button = document.createElement("button");
+  button.textContent = "Delete";
+
   listItem.appendChild(checkbox);
   listItem.appendChild(label);
+  listItem.appendChild(button);
+
   listItem.addEventListener("click", (li) => {    
-    console.log(li.target.id == listItem.id);
+    if (li.target === button) {
+      tasks = tasks.filter((t) => t.id !== task.id);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      listItem.remove();
+    }
     if (li.target !== checkbox && li.target.id == listItem.id)
       checkbox.checked = !checkbox.checked;
   });
+
 
   list.appendChild(listItem);
 }

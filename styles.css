@@ -92,7 +92,6 @@ border-radius: 5px;
 main ul li {    
 padding: 10px;
 border-bottom: 3px solid rgb(56, 35, 20);;
-font-size: 12px;
 }
 main ul li:last-child {
 border-bottom: none;
@@ -103,11 +102,26 @@ transform: scale(1.2);
 vertical-align: middle;
 cursor: pointer;
 }
-
 main ul li input[type="checkbox"]:checked + label {
-text-decoration: line-through;
-color: gray;
+  text-decoration: line-through;
+  color: gray;
 }
+main ul li label {
+vertical-align: middle;
+cursor: pointer;
+
+} 
+main ul li button {
+float: right; /*trocar para outra abordagem*/
+background-color: red;
+color: white;
+border: none;
+cursor: pointer;
+padding: 5px 10px;
+border-radius: 5px;
+font-size: 12px;
+margin: 0;
+} 
 
 
 footer {
