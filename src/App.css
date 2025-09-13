@@ -1,10 +1,10 @@
-@import "tailwindcss";
+ @import "tailwindcss";
 
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0 auto; 
+  padding: 2rem; 
+  text-align: center; 
 }
 
 .logo {
@@ -19,34 +19,14 @@
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 0 auto 2rem auto;
-  border: 2px solid #00000020;  
+  border: 2px solid #00000020;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-/* .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-} */
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 2rem;
+} 

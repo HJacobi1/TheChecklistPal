@@ -1,7 +1,7 @@
 {
   "name": "thechecklistpal",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +13,8 @@
     "@tailwindcss/vite": "^4.1.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-pro-sidebar": "^1.1.0",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
