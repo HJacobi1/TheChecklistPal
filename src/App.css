@@ -1,0 +1,32 @@
+ @import "tailwindcss";
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto; 
+  padding: 2rem; 
+  text-align: center; 
+}
+
+.logo {
+  height: 2em;
+  padding: 0em;
+  will-change: filter;
+  transition: filter 300ms;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 2rem auto;
+  border: 2px solid #00000020;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 2rem;
+} 
