@@ -1,29 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 0,
-      title: "Estudar React",
-      description: "Descrição 1234",
-      isCompleted: false,
-    },
-    {
-      id: 1,
-      title: "Estudar Tailwind",
-      description: "Descrição 567",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      title: "Dar sequencia no projeto",
-      description: "Descrição projeto",
-      isCompleted: true,
-    },
-  ]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function onTaskClick(taskId) {
     const updatedTasks = tasks.map((task) => {
@@ -71,7 +58,9 @@ function App() {
             />
           </section>
         </main>
-        <footer className="text-white bg-yellow-900 p-2 font-bold rounded-t-md">&copy; 2025 The Checklist Pal</footer>
+        <footer className="text-white bg-yellow-900 p-2 font-bold rounded-t-md">
+          &copy; 2025 The Checklist Pal
+        </footer>
       </div>
     </>
   );

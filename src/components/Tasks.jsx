@@ -15,7 +15,11 @@ function Tasks({ tasks, onTaskClick, onTaskDelete }) {
 
   return (
     <div>
-      <ul className="space-y-2 p-6 bg-orange-200 rounded-md shadow text-xl">
+      <ul
+        className={`space-y-2 p-6 bg-orange-200 rounded-md shadow text-xl ${
+          tasks.length == 0 && "invisible"
+        }`}
+      >
         {tasks.map((task) => (
           <li key={task.id} className="flex gap-2">
             <button
