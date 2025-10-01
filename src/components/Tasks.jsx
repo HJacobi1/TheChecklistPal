@@ -10,7 +10,7 @@ function Tasks({ tasks, onTaskClick, onTaskDelete }) {
     query.set("title", task.title);
     query.set("description", task.description);
 
-    navigate(`/TaskDetails?${query.toString()}`);
+    navigate(`/TheChecklistPal/TaskDetails?${query.toString()}`);
   }
 
   return (

@@ -7,11 +7,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/TheChecklistPal",
     element: <App />,
   },
   {
-    path: "TaskDetails/",
+    path: "/TheChecklistPal/TaskDetails/",
     element: <TaskDetails />,
   },
 ]);

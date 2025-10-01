@@ -16,7 +16,7 @@ function TaskDetails() {
         <section className="w-[500px] space-y-4 ">
           <div className="p-6 bg-orange-200 rounded-md shadow text-xl">
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/TheChecklistPal")}
               className=" bg-yellow-900 text-orange-200 p-2 mr-5 mb-5 rounded-md hover:bg-yellow-950 hover:cursor-pointer transition-all duration-200"
             >
               <ChevronLeftIcon />
