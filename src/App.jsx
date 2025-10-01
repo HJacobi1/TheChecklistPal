@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
-import {v4} from "uuid";
+import { v4 } from "uuid";
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -57,20 +57,22 @@ function App() {
 
   return (
     <>
-      <main className="w-screen h-screen bg-yellow-950 flex justify-center p-6">
-        <section className="w-[500px] space-y-4">
-          <h1 className="text-3xl text-white bg-yellow-900 rounded-md font-bold text-center">
-            The Checklist Pal
-          </h1>
-          <AddTask onAddItemClick={onAddItemClick} />
-          <Tasks
-            tasks={tasks}
-            onTaskClick={onTaskClick}
-            onTaskDelete={onTaskDelete}
-          />
-        </section>
-      </main>
-      <footer>&copy; 2025 The Checklist Pal</footer>
+      <div className="bg-yellow-950">
+        <h1 className="text-3xl text-white bg-yellow-900 font-bold text-center p-3 rounded-b-md">
+          The Checklist Pal
+        </h1>
+        <main className="w-screen h-screen bg-yellow-950 flex justify-center p-6">
+          <section className="w-[500px] space-y-4">
+            <AddTask onAddItemClick={onAddItemClick} />
+            <Tasks
+              tasks={tasks}
+              onTaskClick={onTaskClick}
+              onTaskDelete={onTaskDelete}
+            />
+          </section>
+        </main>
+        <footer className="text-white bg-yellow-900 p-2 font-bold rounded-t-md">&copy; 2025 The Checklist Pal</footer>
+      </div>
     </>
   );
 }
