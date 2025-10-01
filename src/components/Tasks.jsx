@@ -1,7 +1,18 @@
 /* eslint-disable react/prop-types */
 import { ChevronRightIcon, Trash2Icon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Tasks({ tasks, onTaskClick, onTaskDelete }) {
+  const navigate = useNavigate();
+
+  function onSeeDetailsClick(task) {
+    const query = new URLSearchParams();
+    query.set("title", task.title);
+    query.set("description", task.description);
+
+    navigate(`/TaskDetails?${query.toString()}`);
+  }
+
   return (
     <div>
       <ul className="space-y-2 p-6 bg-orange-200 rounded-md shadow text-xl">
@@ -15,7 +26,10 @@ function Tasks({ tasks, onTaskClick, onTaskDelete }) {
             >
               {task.title}
             </button>
-            <button className=" bg-yellow-900 text-orange-200 p-2 rounded-md hover:bg-yellow-950 hover:cursor-pointer transition-all duration-200">
+            <button
+              onClick={() => onSeeDetailsClick(task)}
+              className=" bg-yellow-900 text-orange-200 p-2 rounded-md hover:bg-yellow-950 hover:cursor-pointer transition-all duration-200"
+            >
               <ChevronRightIcon />
             </button>
             <button
