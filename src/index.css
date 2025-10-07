@@ -15,6 +15,7 @@
 
   --tx-header: theme(colors.gray.900); /* Default header text color */
   --tx-title: theme(colors.gray.800); /* Default title text color */
+  --tx-comp: theme(colors.gray.800);
   --tx-card: theme(colors.gray.700); /* Default card text color */
 }
 
@@ -29,6 +30,7 @@
 
   --tx-header: white;
   --tx-title: var(--color-slate-950);
+  --tx-comp: var(--color-slate-900);
   --tx-card: var(--color-slate-200);
 }
 
@@ -43,6 +45,7 @@
 
   --tx-header: white;
   --tx-title: var(--color-yellow-950);
+  --tx-comp: var(--color-yellow-900);
   --tx-card: var(--color-orange-200);
 }
 
@@ -57,6 +60,7 @@
 
   --color-tx-header: var(--tx-header);
   --color-tx-title: var(--tx-title);
+  --color-tx-comp: var(--tx-comp);
   --color-tx-card: var(--tx-card);
 }
 
