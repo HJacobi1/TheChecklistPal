@@ -1,5 +1,65 @@
 @import "tailwindcss";
 
+:root {
+  --bg: theme(colors.slate.50); /* Default background color */
+  --bg-header: theme(colors.slate.100); /* Default header background */
+  --bg-card: theme(colors.white); /* Default card background */
+  --bg-comp: theme(colors.gray.100); /* Default component background */
+  --bg-comp-hover: theme(
+    colors.gray.200
+  ); /* Default component hover background */
+  --bg-del: theme(colors.red.500); /* Default delete button background */
+  --bg-del-hover: theme(
+    colors.red.700
+  ); /* Default delete button hover background */
+
+  --tx-header: theme(colors.gray.900); /* Default header text color */
+  --tx-title: theme(colors.gray.800); /* Default title text color */
+  --tx-card: theme(colors.gray.700); /* Default card text color */
+}
+
+.dark {
+  --bg: var(--color-slate-950);
+  --bg-header: var(--color-slate-900);
+  --bg-card: var(--color-slate-200);
+  --bg-comp: var(--color-slate-900);
+  --bg-comp-hover: var(--color-slate-950);
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: white;
+  --tx-title: var(--color-slate-950);
+  --tx-card: var(--color-slate-200);
+}
+
+.beartheme {
+  --bg: var(--color-yellow-950);
+  --bg-header: var(--color-yellow-900);
+  --bg-card: var(--color-orange-200);
+  --bg-comp: var(--color-yellow-900);
+  --bg-comp-hover: var(--color-yellow-950);
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: white;
+  --tx-title: var(--color-yellow-950);
+  --tx-card: var(--color-orange-200);
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-header: var(--bg-header);
+  --color-bg-card: var(--bg-card);
+  --color-bg-comp: var(--bg-comp);
+  --color-bg-comp-hover: var(--bg-comp-hover);
+  --color-bg-del: var(--bg-del);
+  --color-bg-del-hover: var(--bg-del-hover);
+
+  --color-tx-header: var(--tx-header);
+  --color-tx-title: var(--tx-title);
+  --color-tx-card: var(--tx-card);
+}
+
 .indent-2em {
   text-indent: 2em;
 }

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import Sidebar from "./components/Sidebar";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
+import { List, ChevronsLeftIcon } from "lucide-react";
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -11,6 +13,12 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  function toggleSidebar() {
+    setSidebarVisible(!sidebarVisible);
+  }
 
   function onTaskClick(taskId) {
     const updatedTasks = tasks.map((task) => {
@@ -44,23 +52,34 @@ function App() {
 
   return (
     <>
-      <div className="bg-yellow-950">
-        <h1 className="text-3xl text-white bg-yellow-900 font-bold text-center p-3 rounded-b-md">
-          The Checklist Pal
-        </h1>
-        <main className="w-screen h-screen bg-yellow-950 flex justify-center p-6">
-          <section className="w-[500px] space-y-4">
-            <AddTask onAddItemClick={onAddItemClick} />
-            <Tasks
-              tasks={tasks}
-              onTaskClick={onTaskClick}
-              onTaskDelete={onTaskDelete}
-            />
-          </section>
-        </main>
-        <footer className="text-white bg-yellow-900 p-2 font-bold rounded-t-md">
-          &copy; 2025 The Checklist Pal
-        </footer>
+      <div className="beartheme">
+        <div className="w-screen h-screen bg-bg">
+          <header>
+            <div className="text-tx-header bg-bg-header flex  p-3">
+              <button
+                className="cursor-pointer bg-bg-comp hover:bg-bg-comp-hover p-2 rounded-md"
+                onClick={() => toggleSidebar()}
+              >
+                {sidebarVisible ? <ChevronsLeftIcon /> : <List />}
+              </button>
+              <h1 className="text-3xl font-bold ml-1">The Checklist Pal</h1>
+            </div>
+          </header>
+          <Sidebar active={sidebarVisible} />
+          <main className="flex justify-center p-6">
+            <section className="w-[500px] space-y-4">
+              <AddTask onAddItemClick={onAddItemClick} />
+              <Tasks
+                tasks={tasks}
+                onTaskClick={onTaskClick}
+                onTaskDelete={onTaskDelete}
+              />
+            </section>
+          </main>
+          <footer className="fixed bottom-0 w-full text-tx-header bg-bg-header p-2 font-bold rounded-t-md">
+            &copy; 2025 The Checklist Pal
+          </footer>
+        </div>
       </div>
     </>
   );
