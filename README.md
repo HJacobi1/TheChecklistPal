@@ -1,4 +1,5 @@
 # 🧾 TheChecklistPal
+[![Deploy Status](https://github.com/HJacobi1/TheChecklistPal/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/HJacobi1/TheChecklistPal/actions/workflows/pages/pages-build-deployment)
 
 **TheChecklistPal** is a minimalist checklist and notes app built just for fun — and to make everyday organization a little easier.
 It focuses on **simplicity**, **speed**, and a **clean interface** that helps you stay on track without distractions.
