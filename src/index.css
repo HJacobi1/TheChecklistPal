@@ -1,25 +1,37 @@
 @import "tailwindcss";
 
+/* Default Dark Theme */
 :root {
-  --bg: theme(colors.slate.50); /* Default background color */
-  --bg-header: theme(colors.slate.100); /* Default header background */
-  --bg-card: theme(colors.white); /* Default card background */
-  --bg-comp: theme(colors.gray.100); /* Default component background */
-  --bg-comp-hover: theme(
-    colors.gray.200
-  ); /* Default component hover background */
-  --bg-del: theme(colors.red.500); /* Default delete button background */
-  --bg-del-hover: theme(
-    colors.red.700
-  ); /* Default delete button hover background */
+  --bg: #666666;
+  --bg-header: #282820;
+  --bg-card: #282820;
+  --bg-comp: #666666;
+  --bg-comp-hover: #8493a0;
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
 
-  --tx-header: theme(colors.gray.900); /* Default header text color */
-  --tx-title: theme(colors.gray.800); /* Default title text color */
-  --tx-comp: theme(colors.gray.800);
-  --tx-card: theme(colors.gray.700); /* Default card text color */
+  --tx-header: white;
+  --tx-title: white;
+  --tx-comp: white;
+  --tx-card: white;
 }
 
-.dark {
+.light {
+  --bg: #fdf6e3;
+  --bg-header: #d9d2c2;
+  --bg-card: #d9d2c2;
+  --bg-comp: #fdf6e3;
+  --bg-comp-hover: #d3cbb7;
+  --bg-del: theme(colors.red.500);
+  --bg-del-hover: theme(colors.red.700);
+
+  --tx-header: #586e78;
+  --tx-title: #586e78;
+  --tx-comp: #586e78;
+  --tx-card: #586e78;
+}
+
+.navy {
   --bg: var(--color-slate-950);
   --bg-header: var(--color-slate-900);
   --bg-card: var(--color-slate-200);
