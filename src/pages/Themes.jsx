@@ -1,16 +1,20 @@
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import { useState, useEffect } from "react";
-import { ChevronLeftIcon } from "lucide-react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Sun } from "lucide-react";
 
 function Themes() {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const themes = [
-    { value: "light", label: "Light" },
+    { value: "light", label: "Light", icon: "<Sun />" },
     { value: "dark", label: "Dark" },
     { value: "navy", label: "Navy" },
     { value: "beartheme", label: "Bear" },
+    { value: "forest", label: "Forest" },
+    { value: "cosmic", label: "Cosmic" },
+    { value: "sunrise", label: "Sunrise" },
+    { value: "glacier", label: "Glacier" },
+    { value: "blossom", label: "Blossom" },
   ];
 
   function getInitialTheme() {
@@ -53,7 +57,7 @@ function Themes() {
                 onClick={() => setTheme(item.value)}
               >
                 <input
-                  className="h-4 w-4 cursor-pointer ml-2"
+                  className="h-4 w-4 cursor-pointer ml-2 accent-bg-comp"
                   type="radio"
                   name="theme"
                   value={item.value}
@@ -63,7 +67,7 @@ function Themes() {
                 />
                 <label
                   htmlFor={item.value}
-                  className="text-tx-card ml-2 -translate-y-0.5 hover:cursor-pointer"
+                  className="text-tx-card ml-2 hover:cursor-pointer"
                 >
                   {item.label}
                 </label>
