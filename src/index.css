@@ -1,5 +1,151 @@
 @import "tailwindcss";
 
+/* Default Dark Theme */
+:root {
+  --bg: #666666;
+  --bg-header: #282820;
+  --bg-card: #282820;
+  --bg-comp: #666666;
+  --bg-comp-hover: #8493a0;
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: white;
+  --tx-title: white;
+  --tx-comp: white;
+  --tx-card: white;
+}
+
+.light {
+  --bg: #fdf6e3;
+  --bg-header: #d9d2c2;
+  --bg-card: #d9d2c2;
+  --bg-comp: #fdf6e3;
+  --bg-comp-hover: #d3cbb7;
+  --bg-del: theme(colors.red.500);
+  --bg-del-hover: theme(colors.red.700);
+
+  --tx-header: #586e78;
+  --tx-title: #586e78;
+  --tx-comp: #586e78;
+  --tx-card: #586e78;
+}
+
+.navy {
+  --bg: var(--color-slate-950);
+  --bg-header: var(--color-slate-900);
+  --bg-card: var(--color-slate-200);
+  --bg-comp: var(--color-slate-900);
+  --bg-comp-hover: var(--color-slate-950);
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: white;
+  --tx-title: var(--color-slate-950);
+  --tx-comp: var(--color-slate-900);
+  --tx-card: var(--color-slate-200);
+}
+
+.beartheme {
+  --bg: var(--color-yellow-950);
+  --bg-header: var(--color-yellow-900);
+  --bg-card: var(--color-orange-200);
+  --bg-comp: var(--color-yellow-900);
+  --bg-comp-hover: var(--color-yellow-950);
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: white;
+  --tx-title: var(--color-yellow-950);
+  --tx-comp: var(--color-yellow-900);
+  --tx-card: var(--color-orange-200);
+}
+.forest {
+  --bg: #1a2e24;
+  --bg-header: #264334;
+  --bg-card: #e3f2e1;
+  --bg-comp: #264334;
+  --bg-comp-hover: #1a2e24;
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: #e3f2e1;
+  --tx-title: #1a2e24;
+  --tx-comp: #264334;
+  --tx-card: #d7ecd9;
+}
+.cosmic {
+  --bg: #1b1426;
+  --bg-header: #281f36;
+  --bg-card: #d7d4f0;
+  --bg-comp: #281f36;
+  --bg-comp-hover: #1b1426;
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: #e4e1f9;
+  --tx-title: #1b1426;
+  --tx-comp: #281f36;
+  --tx-card: #d7d4f0;
+}
+.sunrise {
+  --bg: #fff4e6;
+  --bg-header: #ffd7ba;
+  --bg-card: #faf8f7;
+  --bg-comp: #ffd7ba;
+  --bg-comp-hover: #ffbfa3;
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: #4a3222;
+  --tx-title: #4a3222;
+  --tx-comp: #4a3222;
+  --tx-card: #4a3222;
+}
+.glacier {
+  --bg: #e6f0f5;
+  --bg-header: #c3dbe7;
+  --bg-card: #ffffff;
+  --bg-comp: #c3dbe7;
+  --bg-comp-hover: #b0c8d5;
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: #1e3a4c;
+  --tx-title: #1e3a4c;
+  --tx-comp: #1e3a4c;
+  --tx-card: #1e3a4c;
+}
+.blossom {
+  --bg: #fff0f3;
+  --bg-header: #ffc2d1;
+  --bg-card: #ffe5ec;
+  --bg-comp: #ffc2d1;
+  --bg-comp-hover: #ffb3c6;
+  --bg-del: var(--color-red-500);
+  --bg-del-hover: var(--color-red-700);
+
+  --tx-header: #5a2633;
+  --tx-title: #5a2633;
+  --tx-comp: #5a2633;
+  --tx-card: #5a2633;
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-header: var(--bg-header);
+  --color-bg-card: var(--bg-card);
+  --color-bg-comp: var(--bg-comp);
+  --color-bg-comp-hover: var(--bg-comp-hover);
+  --color-bg-del: var(--bg-del);
+  --color-bg-del-hover: var(--bg-del-hover);
+
+  --color-tx-header: var(--tx-header);
+  --color-tx-title: var(--tx-title);
+  --color-tx-comp: var(--tx-comp);
+  --color-tx-card: var(--tx-card);
+}
+
 .indent-2em {
   text-indent: 2em;
 }

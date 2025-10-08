@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
@@ -11,6 +13,12 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  function toggleSidebar() {
+    setSidebarVisible(!sidebarVisible);
+  }
 
   function onTaskClick(taskId) {
     const updatedTasks = tasks.map((task) => {
@@ -44,11 +52,10 @@ function App() {
 
   return (
     <>
-      <div className="bg-yellow-950">
-        <h1 className="text-3xl text-white bg-yellow-900 font-bold text-center p-3 rounded-b-md">
-          The Checklist Pal
-        </h1>
-        <main className="w-screen h-screen bg-yellow-950 flex justify-center p-6">
+      <div className="w-screen h-screen bg-bg">
+        <Header toggleSidebar={toggleSidebar} sidebarVisible={sidebarVisible} />
+        <Sidebar active={sidebarVisible} />
+        <main className="flex justify-center p-6">
           <section className="w-[500px] space-y-4">
             <AddTask onAddItemClick={onAddItemClick} />
             <Tasks
@@ -58,7 +65,7 @@ function App() {
             />
           </section>
         </main>
-        <footer className="text-white bg-yellow-900 p-2 font-bold rounded-t-md">
+        <footer className="fixed bottom-0 w-full text-tx-header bg-bg-header p-2 font-bold">
           &copy; 2025 The Checklist Pal
         </footer>
       </div>
