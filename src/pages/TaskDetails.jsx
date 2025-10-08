@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import { ChevronLeftIcon } from "lucide-react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function TaskDetails() {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -10,6 +10,23 @@ function TaskDetails() {
   const title = searchParams.get("title");
   const description = searchParams.get("description");
   const navigate = useNavigate();
+
+  function getInitialTheme() {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return "dark";
+    }
+    return "light";
+  }
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || getInitialTheme()
+  );
+  useEffect(() => {
+    document.documentElement.className = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   function toggleSidebar() {
     setSidebarVisible(!sidebarVisible);

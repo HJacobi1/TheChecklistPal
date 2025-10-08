@@ -9,10 +9,26 @@ function App() {
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
-
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
+  function getInitialTheme() {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return "dark";
+    }
+    return "light";
+  }
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || getInitialTheme()
+  );
+  useEffect(() => {
+    document.documentElement.className = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
