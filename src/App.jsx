@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
+import Layout from "./components/Layout";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
@@ -12,29 +11,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
-
-  function getInitialTheme() {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      return "dark";
-    }
-    return "light";
-  }
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || getInitialTheme()
-  );
-  useEffect(() => {
-    document.documentElement.className = theme;
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const [sidebarVisible, setSidebarVisible] = useState(false);
-
-  function toggleSidebar() {
-    setSidebarVisible(!sidebarVisible);
-  }
 
   function onTaskClick(taskId) {
     const updatedTasks = tasks.map((task) => {
@@ -68,23 +44,16 @@ function App() {
 
   return (
     <>
-      <div className="w-screen h-screen bg-bg">
-        <Header toggleSidebar={toggleSidebar} sidebarVisible={sidebarVisible} />
-        <Sidebar active={sidebarVisible} />
-        <main className="flex justify-center p-6">
-          <section className="w-[500px] space-y-4">
-            <AddTask onAddItemClick={onAddItemClick} />
-            <Tasks
-              tasks={tasks}
-              onTaskClick={onTaskClick}
-              onTaskDelete={onTaskDelete}
-            />
-          </section>
-        </main>
-        <footer className="fixed bottom-0 w-full text-tx-header bg-bg-header p-2 font-bold">
-          &copy; 2025 The Checklist Pal
-        </footer>
-      </div>
+      <Layout>
+        <section className="w-[500px] space-y-4">
+          <AddTask onAddItemClick={onAddItemClick} />
+          <Tasks
+            tasks={tasks}
+            onTaskClick={onTaskClick}
+            onTaskDelete={onTaskDelete}
+          />
+        </section>
+      </Layout>
     </>
   );
 }
