@@ -1,42 +1,16 @@
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import Layout from "../components/Layout";
 import { ChevronLeftIcon } from "lucide-react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 function TaskDetails() {
-  const [sidebarVisible, setSidebarVisible] = useState(false);
   const [searchParams] = useSearchParams();
   const title = searchParams.get("title");
   const description = searchParams.get("description");
   const navigate = useNavigate();
 
-  function getInitialTheme() {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      return "dark";
-    }
-    return "light";
-  }
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || getInitialTheme()
-  );
-  useEffect(() => {
-    document.documentElement.className = theme;
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  function toggleSidebar() {
-    setSidebarVisible(!sidebarVisible);
-  }
-
   return (
-    <div className="w-screen h-screen bg-bg">
-      <Header toggleSidebar={toggleSidebar} sidebarVisible={sidebarVisible} />
-      <Sidebar active={sidebarVisible} />
-      <main className="bg-bg flex justify-center p-6">
+    <>
+      <Layout>
         <section className="w-[500px] space-y-4 ">
           <div className="p-6 bg-bg-card rounded-md shadow text-xl">
             <button
@@ -51,11 +25,8 @@ function TaskDetails() {
             </p>
           </div>
         </section>
-      </main>
-      <footer className="fixed bottom-0 w-full text-tx-header bg-bg-header p-2 font-bold">
-        &copy; 2025 The Checklist Pal
-      </footer>
-    </div>
+      </Layout>
+    </>
   );
 }
 
