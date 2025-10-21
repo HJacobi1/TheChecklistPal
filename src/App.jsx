@@ -30,7 +30,6 @@ function App() {
 
   function onAddItemClick(title, description) {
     if (!title.trim()) return;
-    if (!description.trim()) return;
 
     const newTask = {
       id: v4(),

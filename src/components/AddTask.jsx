@@ -20,7 +20,7 @@ function AddTask({ onAddItemClick }) {
         type="text"
         value={description}
         onChange={(event) => setDescription(event.target.value)}
-        placeholder="Description"
+        placeholder="Description (optional)"
         className="w-full bg-bg-comp text-tx-card text-left p-2 rounded-md"
       />
       <button
