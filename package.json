@@ -2,7 +2,7 @@
   "name": "thechecklistpal",
   "homepage": "https://hjacobi1.github.io/TheChecklistPal",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.6.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
