@@ -5,7 +5,6 @@ import Tasks from "./Tasks";
 import { v4 } from "uuid";
 
 function Checklist() {
-  const [checklistName, setChecklistName] = useState("");
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );

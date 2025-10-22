@@ -14,11 +14,6 @@ function TaskDetails({ task }) {
   const [title, setTitle] = useState(currentTask.title);
   const [description, setDescription] = useState(currentTask.description);
 
-  useEffect(() => {    
-    console.log(title + "\n"+ JSON.stringify(currentTask))
-    // localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [title]);
-
   const navigate = useNavigate();
 
   function onAddItemClick(title, description) {
@@ -28,6 +23,8 @@ function TaskDetails({ task }) {
 
     currentTask.title = title;
     currentTask.description = description;
+    
+    localStorage.setItem("tasks",JSON.stringify(tasks))
   }
 
   return (
@@ -58,7 +55,7 @@ function TaskDetails({ task }) {
               onClick={() => setEditing(!editing)}
               className="bg-bg-card text-tx-title/50 p-2 mr-5 mb-5 rounded-md hover:cursor-pointer"
             >
-              {editing ? <X /> : <PenSquare />}
+              {editing ? <X className="h-5" /> : <PenSquare className="h-5" />}
             </button>
             <p className="text-tx-comp text-justify indent-2em">
               {description}
