@@ -55,7 +55,7 @@ function TaskDetails({ task }) {
               onClick={() => setEditing(!editing)}
               className="bg-bg-card text-tx-title/50 p-2 mr-5 mb-5 rounded-md hover:cursor-pointer"
             >
-              {editing ? <X className="h-5" /> : <PenSquare className="h-5" />}
+              {editing ? <X className="text-bg-del h-5" /> : <PenSquare className="h-5" />}
             </button>
             <p className="text-tx-comp text-justify indent-2em">
               {description}

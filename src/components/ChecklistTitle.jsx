@@ -27,15 +27,15 @@ export default function ChecklistTitle() {
                 id="titleInput"
                 name="titleInput"
                 placeholder={title}
-                className="w-60 border-b-2 border-tx-title/50 font-bold text-tx-title text-2xl focus:border-b-2 focus:outline-none"
+                className="w-60 mr-2 border-b-2 border-tx-title/50 font-bold text-tx-title text-2xl focus:border-b-2 focus:outline-none"
                 required
                 autoFocus
               ></input>
               <button
-                className="h-4 opacity-75 hover:cursor-pointer"
+                className="h-4 mr-2 opacity-75 hover:cursor-pointer"
                 onClick={() => setEditing(false)}
               >
-                <X className="h-5" />
+                <X className="h-5 text-bg-del" />
               </button>
               <button
                 type="submit"
