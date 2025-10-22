@@ -6,8 +6,7 @@ function Tasks({ tasks, onTaskClick, onTaskDelete }) {
 
   function onSeeDetailsClick(task) {
     const query = new URLSearchParams();
-    query.set("title", task.title);
-    query.set("description", task.description);
+    query.set("id", task.id);
 
     navigate(`/TheChecklistPal/TaskDetails?${query.toString()}`);
   }

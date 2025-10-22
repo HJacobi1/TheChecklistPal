@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-function AddTask({ onAddItemClick }) {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+function AddTask({ taskTitle, taskDescription, buttonLabel, onAddItemClick }) {
+  const [title, setTitle] = useState(taskTitle ?? "");
+  const [description, setDescription] = useState(taskDescription ?? "");
 
   return (
     <div className="flex flex-col p-6 space-y-4 bg-bg-card rounded-md text-xl">
@@ -28,7 +28,7 @@ function AddTask({ onAddItemClick }) {
         }}
         className="p-2 bg-bg-comp text-tx-card  rounded-md cursor-pointer hover:bg-bg-comp-hover transition-all duration-200"
       >
-        Add Task
+        {buttonLabel}
       </button>
     </div>
   );

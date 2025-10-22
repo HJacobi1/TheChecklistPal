@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import ChecklistTitle from "./ChecklistTitle";
 import AddTask from "./AddTask";
 import Tasks from "./Tasks";
 import { v4 } from "uuid";
-import { PenSquare } from "lucide-react";
 
 function Checklist() {
   const [checklistName, setChecklistName] = useState("");
@@ -41,19 +41,16 @@ function Checklist() {
 
     setTasks([...tasks, newTask]);
   }
-  function onEditChecklistName() {
-    
-  }
 
   return (
     <>
-      <div className="w-full text-2xl text-center font-bold text-tx-title bg-bg-card rounded-md p-1">
-        <span>Your Checklist</span>
-        <button className="hover:cursor-pointer" onClick={onEditChecklistName}>
-          <PenSquare className="opacity-"/>
-        </button>
-      </div>
-      <AddTask onAddItemClick={onAddItemClick} />
+      <ChecklistTitle />
+      <AddTask
+        taskTitle=""
+        taskDescription=""
+        buttonLabel="Add Task"
+        onAddItemClick={onAddItemClick}
+      />
       <Tasks
         tasks={tasks}
         onTaskClick={onTaskClick}
